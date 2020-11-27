@@ -1,0 +1,31 @@
+*********************************************************
+Compiler Errors:
+*********************************************************
+Syntax Errors:
+Definition: Something wrong with the program structure.
+Errors such as a missing semicolon.
+
+---
+Many times when you fix one error, other errors can be fixed from that primary fix.
+---
+
+Semantic Errors:
+Definition: Stating one variable type then assigning an object of a separate type to that variable.
+Errors such as declaring a int and trying to assign a string to it.
+
+Prototyping: Trying new concepts that are prone to errors.
+
+*********************************************************
+Compiler Warnings:
+*********************************************************
+---
+Tip: Do not ignore compiler warnings, these are potential issues that could affect your program negatively.
+---
+
+Warning example:
+Unused variables that waste resources.
+Printing a variable to cout without assigning a value.
+
+*********************************************************
+Linker Errors:
+*********************************************************

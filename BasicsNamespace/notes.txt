@@ -1,0 +1,51 @@
+https://stackoverflow.com/questions/3202136/using-g-to-compile-multiple-cpp-and-h-files
+
+-----
+pwd == current working directory.
+-----
+
+Using G++ to compile multiple .cpp and .h files
+I've just inherited some C++ code that was written poorly with one cpp file which contained the main and a bunch of other functions. 
+There are also .h files that contain classes and their function definitions. Until now the program was compiled using the command g++ main.cpp.
+Now that I've separated the classes to .h and .cpp files do I need to use a makefile or can I still use the g++ main.cpp command?
+
+Solution:
+list all the other cpp files after main.cpp.
+
+ie
+
+g++ main.cpp other.cpp etc.cpp
+and so on.
+
+Or you can compile them all individually. You then link all the resulting ".o" files together.
+-o can be used to set the resulting name.
+You can even do g++ *.cpp -o output
+
+To compile separately without linking you need to add -c option:
+Basically this will generate a .o file you can then compile with others.
+Makes things cleaner for removing files to clean up.
+g++ -c myclass.cpp
+g++ -c main.cpp
+g++ myclass.o main.o
+./a.out
+
+------------------------------------------------------------------------------------------------------------------------------------
+>> More Makefile knowledge: https://opensource.com/article/18/8/what-how-makefile
+
+Now that I've separated the classes to .h and .cpp files do I need to use a makefile or can I still use the "g++ main.cpp" command?
+
+Compiling several files at once is a poor choice if you are going to put that into the Makefile.
+
+Normally in a Makefile (for GNU/Make), it should suffice to write that:
+
+# "all" is the name of the default target, running "make" without params would use it
+all: executable1
+
+# for C++, replace CC (c compiler) with CXX (c++ compiler) which is used as default linker
+CC=$(CXX)
+
+# tell which files should be used, .cpp -> .o make would do automatically
+executable1: file1.o file2.o
+
+That way make would be properly recompiling only what needs to be recompiled. One can also add few tweaks to generate the header file dependencies 
+- so that make would also properly rebuild what's need to be rebuilt due to the header file changes.

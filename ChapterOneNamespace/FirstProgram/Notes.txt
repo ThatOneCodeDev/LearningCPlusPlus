@@ -29,3 +29,17 @@ Printing a variable to cout without assigning a value.
 *********************************************************
 Linker Errors:
 *********************************************************
+Definition: Stating something is defined without linking to the proper resource.
+Errors such as defining an external int and not linking anything to it.
+
+*********************************************************
+RunTime Errors:
+*********************************************************
+Definition: Errors that occur while the program is running.
+
+*********************************************************
+Logic Errors:
+*********************************************************
+Definition: Mistakes made by the programmer...
+
+

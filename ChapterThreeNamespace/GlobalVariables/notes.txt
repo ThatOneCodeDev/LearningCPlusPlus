@@ -1,0 +1,3 @@
+Local variables are variables that can only be accessed by code that is in the current scope of the variable.
+Global variables could potentially be changed anywhere in the program and could be potentially catastrophic.
+

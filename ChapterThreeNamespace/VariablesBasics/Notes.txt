@@ -1,0 +1,24 @@
+Variables: Reference to an object or value stored in memory.
+
+Variables have a type and a value.
+The type specifies what is legal to be stored in a variable.
+
+***
+Variables are case sensitive!
+***
+Variable names cannot contain spaces!
+***
+Cannot use a reserved name for a variable!
+***
+
+You should be consistent with the variable names that you use. (camelCase could work best.)
+Use meaningful names for your variables.
+Remember to initialize (assign a value to a variable) prior to using that variable.
+
+Example: 
+
+    int age {69};
+    //optionally can use: int age = 69;
+
+--------
+
